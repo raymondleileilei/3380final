@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import EachBook from './EachBook';
+import { useNavigate } from 'react-router-dom';
 
 const HomePage = () => {
     const [books, setBooks] = useState([]);
@@ -18,6 +19,11 @@ const HomePage = () => {
             });
 
     }, []);
+
+    const createBook = (e) => {
+        e.preventDefault();
+        navigate('/create-book');
+      }
 
     const deleteBook=(id)=>{
         axios
@@ -47,7 +53,7 @@ const HomePage = () => {
         <h2 className="display-4 text-center">Books List</h2>
       </div>
       <div className="col-md-11">
-        <a className="btn btn-info float-right" href="/create-book">
+        <a className="btn btn-info float-right" href="/create-book"> onClick={createBook}
           + Add New Book
         </a>
         <br />
