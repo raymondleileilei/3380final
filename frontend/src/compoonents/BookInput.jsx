@@ -14,7 +14,7 @@ const BookInput = () => {
       description: desc,
     };
     axios
-      .post("http://localhost:5000/api/v1/book", newBook)
+      .post("https://three380final-d4hg.onrender.com/api/v1/book", newBook)
       .then((res) => {
         window.location = "/";
       })

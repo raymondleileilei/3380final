@@ -8,7 +8,7 @@ const HomePage = () => {
     useEffect(() => {
         axios
             // .get('https://three380finalpractice.onrender.com/api/arts')
-            .get('http://localhost:5000/api/v1/book')
+            .get('https://three380final-d4hg.onrender.com/api/v1/book')
             .then((res) => {
                 setBooks(res.data)
                 console.log(res.data);
@@ -21,7 +21,7 @@ const HomePage = () => {
 
     const deleteBook=(id)=>{
         axios
-        .delete('http://localhost:5000/api/v1/book/' + id)
+        .delete('https://three380final-d4hg.onrender.com/api/v1/book/' + id)
         .then((res) => {
             console.log(res.data);
         })
